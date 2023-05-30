@@ -1,17 +1,22 @@
 {
-    "people": [
-      {
-        "id": 1,
-        "firstName": "Michel",
-        "lastName": "Polnareff",
-        "email": "michel.polnareff@example.com"
-      },
-      {
-        "id": 2,
-        "firstName": "Jane",
-        "lastName": "Birkin",
-        "email": "jane.birkin@example.com"
-      }
-    ]
-  }
-  
+  "people": [
+    {
+      "id": 1,
+      "firstName": "Michel",
+      "lastName": "Polnareff",
+      "email": "michel.polnareff@example.com"
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Birkin",
+      "email": "jane.birkin@example.com"
+    },
+    {
+      "id": 3,
+      "firstName": "Chazaut",
+      "lastName": "Romain",
+      "email": "romain.chazaut@laplateforme.io"
+    }
+  ]
+}

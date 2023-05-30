@@ -1,60 +1,69 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 
-function PersonForm({ person, onSave, onCancel }) {
-  const [formPerson, setFormPerson] = useState(person);
+const PersonForm = ({ personToUpdate, updatePersonList }) => {
+  const [person, setPerson] = useState({
+    id: "",
+    firstName: "",
+    lastName: "",
+    email: "",
+  });
 
-  const handleInputChange = (event) => {
-    setFormPerson({
-      ...formPerson,
-      [event.target.name]: event.target.value,
+  useEffect(() => {
+    if (personToUpdate) {
+      setPerson(personToUpdate);
+    }
+  }, [personToUpdate]);
+
+  const handleChange = (e) => {
+    setPerson({
+      ...person,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSave(formPerson);
-  };
-
-  const handleCancel = () => {
-    onCancel();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (!person.id) {
+      // If the person object doesn't have an id, it's a new person.
+      await axios.post("http://localhost:3000/people", person);
+    } else {
+      // If the person object has an id, we're updating an existing person.
+      await axios.put(`http://localhost:3000/people/${person.id}`, person);
+    }
+    updatePersonList();
+    setPerson({ id: "", firstName: "", lastName: "", email: "" });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
-        <input
-          type="text"
-          name="firstName"
-          value={formPerson.firstName}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label>
-        Last Name:
-        <input
-          type="text"
-          name="lastName"
-          value={formPerson.lastName}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <label>
-        Email:
-        <input
-          type="email"
-          name="email"
-          value={formPerson.email}
-          onChange={handleInputChange}
-        />
-      </label>
-
-      <button type="submit">Save</button>
-      <button type="button" onClick={handleCancel}>Cancel</button>
+      <input
+        type="text"
+        name="firstName"
+        value={person.firstName}
+        onChange={handleChange}
+        placeholder="First Name"
+        required
+      />
+      <input
+        type="text"
+        name="lastName"
+        value={person.lastName}
+        onChange={handleChange}
+        placeholder="Last Name"
+        required
+      />
+      <input
+        type="email"
+        name="email"
+        value={person.email}
+        onChange={handleChange}
+        placeholder="Email"
+        required
+      />
+      <button type="submit">{person.id ? "Update" : "Add"}</button>
     </form>
   );
-}
+};
 
 export default PersonForm;

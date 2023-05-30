@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import { getAll } from "./services/personService";
+import PersonList from "./components/PersonList";
+import PersonForm from "./components/PersonForm";
 
 function App() {
+  const [people, setPeople] = useState([]);
+
+  useEffect(() => {
+    getAll().then((initialPeople) => {
+      setPeople(initialPeople);
+    });
+  }, []);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>People List</h1>
+      <PersonForm />
+      <PersonList people={people} />
     </div>
   );
 }
