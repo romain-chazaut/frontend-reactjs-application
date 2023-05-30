@@ -17,6 +17,12 @@
       "firstName": "Chazaut",
       "lastName": "Romain",
       "email": "romain.chazaut@laplateforme.io"
+    },
+    {
+      "id": 4,
+      "firstName": "Riri",
+      "lastName": "ana",
+      "email": "riri.ana@ririnana.com"
     }
   ]
 }
