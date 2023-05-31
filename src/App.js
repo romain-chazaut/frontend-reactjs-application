@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAll, remove } from "./services/personService";
 import PersonList from "./components/PersonList";
 import PersonForm from "./components/PersonForm";
+import './App.css';
 
 function App() {
   const [people, setPeople] = useState([]);

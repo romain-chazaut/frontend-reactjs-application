@@ -8,7 +8,7 @@ const Person = ({ person, handleUpdate, handleDelete }) => {
   };
 
   return (
-    <div>
+    <div className="person-card">
       <h2>{person.firstName} {person.lastName}</h2>
       <p>Email: {person.email}</p>
       <button onClick={() => handleUpdate(person.id, updatedInfo)}>Update</button>

@@ -43,9 +43,9 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
   };
 
   return (
-    <div>
-      {error && <p className="error">{error}</p>}
-      <form onSubmit={handleSubmit}>
+    <div className="form-container">
+      {error && <p className="error-message">{error}</p>}
+      <form onSubmit={handleSubmit} className="person-form">
         <input
           type="text"
           name="firstName"
@@ -53,6 +53,7 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           onChange={handleChange}
           placeholder="First Name"
           required
+          className="form-input"
         />
         <input
           type="text"
@@ -61,6 +62,7 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           onChange={handleChange}
           placeholder="Last Name"
           required
+          className="form-input"
         />
         <input
           type="email"
@@ -69,8 +71,9 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           onChange={handleChange}
           placeholder="Email"
           required
+          className="form-input"
         />
-        <button type="submit">{person.id ? "Update" : "Add"}</button>
+        <button type="submit" className="form-btn">{person.id ? "Update" : "Add"}</button>
       </form>
     </div>
   );
