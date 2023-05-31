@@ -1,12 +1,6 @@
 {
   "people": [
     {
-      "firstName": "Updated First Name",
-      "lastName": "Updated Last Name",
-      "email": "updated.email@example.com",
-      "id": 11
-    },
-    {
       "id": 14,
       "firstName": "xx",
       "lastName": "xx",
@@ -14,18 +8,24 @@
     },
     {
       "id": 16,
-      "firstName": "Chazaut",
-      "lastName": "Romain",
-      "email": "romain.chazaut@laplateforme.io"
-    },
-    {
-      "id": 17,
       "firstName": "Chazaux",
       "lastName": "Romain",
       "email": "romain.chazaut@laplateforme.io"
     },
     {
-      "id": 18,
+      "id": 19,
+      "firstName": "Chazaut",
+      "lastName": "Romain",
+      "email": "romain.chazaut@laplateforme.io"
+    },
+    {
+      "id": 20,
+      "firstName": "rollet",
+      "lastName": "clarisse",
+      "email": "cla.rollet@hotmail.com"
+    },
+    {
+      "id": 21,
       "firstName": "Chazaut",
       "lastName": "Romain",
       "email": "romain.chazaut@laplateforme.io"

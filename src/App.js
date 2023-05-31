@@ -25,11 +25,13 @@ function App() {
   };
 
   const handleDelete = async (id) => {
-    try {
-      await remove(id);
-      updatePersonList();
-    } catch (error) {
-      console.error('Error deleting person:', error);
+    if (window.confirm("Are you sure you want to delete this person?")) {
+      try {
+        await remove(id);
+        updatePersonList();
+      } catch (error) {
+        console.error('Error deleting person:', error);
+      }
     }
   };
 
