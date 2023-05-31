@@ -1,12 +1,6 @@
 {
   "people": [
     {
-      "id": 14,
-      "firstName": "xx",
-      "lastName": "xx",
-      "email": "xx.xx@xx.io"
-    },
-    {
       "id": 16,
       "firstName": "Chazaux",
       "lastName": "Romain",
@@ -14,21 +8,27 @@
     },
     {
       "id": 19,
-      "firstName": "Chazaut",
+      "firstName": "Chazau",
       "lastName": "Romain",
       "email": "romain.chazaut@laplateforme.io"
-    },
-    {
-      "id": 20,
-      "firstName": "rollet",
-      "lastName": "clarisse",
-      "email": "cla.rollet@hotmail.com"
     },
     {
       "id": 21,
       "firstName": "Chazaut",
       "lastName": "Romain",
       "email": "romain.chazaut@laplateforme.io"
+    },
+    {
+      "id": 22,
+      "firstName": "ww",
+      "lastName": "ww",
+      "email": "ww.ww@ww.io"
+    },
+    {
+      "id": 23,
+      "firstName": "clacla",
+      "lastName": "rollette",
+      "email": "clacla@rollette.com"
     }
   ]
 }

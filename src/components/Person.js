@@ -1,8 +1,6 @@
 import React from 'react';
 
 const Person = ({ person, handleUpdate, handleDelete }) => {
-
-
   const updatedInfo = {
     firstName: 'Updated First Name',
     lastName: 'Updated Last Name',
