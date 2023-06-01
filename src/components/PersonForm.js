@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+
 const PersonForm = ({ personToUpdate, updatePersonList }) => {
   const [person, setPerson] = useState({
     id: "",
@@ -43,9 +44,9 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
   };
 
   return (
-    <div className="form-container">
+    <div >
       {error && <p className="error-message">{error}</p>}
-      <form onSubmit={handleSubmit} className="person-form">
+      <form onSubmit={handleSubmit} className="person-form" style={{display: "flex", flexDirection: "column" }}>
         <input
           type="text"
           name="firstName"
@@ -54,6 +55,7 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           placeholder="First Name"
           required
           className="form-input"
+          style={{border: "none", outline: "none", background: "#F9F9F9", padding: "8px 16px", margin: 8}}
         />
         <input
           type="text"
@@ -63,6 +65,7 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           placeholder="Last Name"
           required
           className="form-input"
+          style={{border: "none", outline: "none", background: "#F9F9F9", padding: "8px 16px", margin: 8}}
         />
         <input
           type="email"
@@ -72,8 +75,9 @@ const PersonForm = ({ personToUpdate, updatePersonList }) => {
           placeholder="Email"
           required
           className="form-input"
+          style={{border: "none", outline: "none", background: "#F9F9F9", padding: "8px 16px", margin: 8}}
         />
-        <button type="submit" className="form-btn">{person.id ? "Update" : "Add"}</button>
+        <button type="submit" className="form-btn" style={{outline: "none", border: "none", background: "red", padding: 8, borderRadius: 6}}>{person.id ? "Update" : "Add"}</button>
       </form>
     </div>
   );

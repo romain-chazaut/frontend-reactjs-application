@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { getAll, remove } from "./services/personService";
 import PersonList from "./components/PersonList";
 import PersonForm from "./components/PersonForm";
-import './App.css';
+// import './App.css';
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -38,16 +38,20 @@ function App() {
 
   return (
     <div className="App">
-      <h1>People List</h1>
-      <PersonForm
-        personToUpdate={personToUpdate}
-        updatePersonList={updatePersonList}
-      />
-      <PersonList
-        people={people}
-        handleUpdate={handleUpdate}
-        handleDelete={handleDelete}
-      />
+
+      <div style={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}}>
+        <h1>People List</h1>
+        <PersonForm
+          personToUpdate={personToUpdate}
+          updatePersonList={updatePersonList}
+        />
+        <PersonList
+          people={people}
+          handleUpdate={handleUpdate}
+          handleDelete={handleDelete}
+        />
+      </div>
+      
     </div>
   );
 }
